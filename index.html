@@ -70,6 +70,12 @@
             border-radius: 1rem;
 
         }
+        #rg{
+            background-color: #f7f5f5;
+            color: #323232;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            padding: 0.5rem;
         /*====MObile View=====*/
         @media (max-width:430px)
         {
@@ -172,6 +178,7 @@
     </div>
     <div class="message">
         <p id="msg">Play your Move</p>
+        <p id="rg"></p>
     </div>
     
     <script>
@@ -185,6 +192,7 @@
 
         const drawGame = (userid,comp) =>{
             msg.innerHTML=`Game Draw!`;
+            region.innerText =`Both Chooses are Same `;
             msg.style.backgroundColor='gray';
         };
         const showWinner=(userwin, userid, comp)=>{
@@ -193,12 +201,14 @@
                 userSc.innerText=userscore;
             console.log('you win');
             msg.innerHTML=`You win!`;
+            region.innerText=`Your ${userid} beat Comp. ${comp}`;
             msg.style.backgroundColor='green'
             }else{
                 compscore++;
                 compuSc.innerText=compscore;
-                console.log('you losse');
+        
                 msg.innerHTML=`You Lose!`;
+                region.innerText=`Comp. ${comp} beat Your ${userid}`;
                 msg.style.backgroundColor='red';
             }
 
